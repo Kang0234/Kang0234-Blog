@@ -2,7 +2,7 @@ import { prisma } from '@/lib/prisma';
 import PostCard from '@/components/PostCard';
 import Link from 'next/link';
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 interface Props { params: { tag: string } }
 

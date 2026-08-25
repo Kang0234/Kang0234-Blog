@@ -5,14 +5,9 @@ import CommentSection from '@/components/CommentSection';
 import LoliImage from '@/components/LoliImage';
 import Link from 'next/link';
 
-export const revalidate = 30;
+export const dynamic = 'force-dynamic';
 
 interface Props { params: { id: string } }
-
-export async function generateStaticParams() {
-  const posts = await prisma.post.findMany({ select: { id: true } });
-  return posts.map((p) => ({ id: p.id }));
-}
 
 export default async function PostPage({ params }: Props) {
   const post = await prisma.post.findUnique({
