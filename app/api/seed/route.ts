@@ -5,6 +5,39 @@ import bcrypt from 'bcryptjs';
 
 export async function GET() {
   try {
+    // 建表（如果不存在）
+    await prisma.$executeRaw`CREATE TABLE IF NOT EXISTS "User" (
+      id TEXT PRIMARY KEY,
+      username TEXT UNIQUE NOT NULL,
+      password TEXT NOT NULL,
+      role TEXT NOT NULL DEFAULT 'admin',
+      "createdAt" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )`;
+    await prisma.$executeRaw`CREATE TABLE IF NOT EXISTS "Post" (
+      id TEXT PRIMARY KEY,
+      title TEXT NOT NULL,
+      content TEXT NOT NULL,
+      summary TEXT,
+      "coverImage" TEXT,
+      tags TEXT NOT NULL DEFAULT '',
+      views INTEGER NOT NULL DEFAULT 0,
+      "createdAt" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      "updatedAt" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )`;
+    await prisma.$executeRaw`CREATE TABLE IF NOT EXISTS "Comment" (
+      id TEXT PRIMARY KEY,
+      "postId" TEXT NOT NULL REFERENCES "Post"(id) ON DELETE CASCADE,
+      "guestName" TEXT NOT NULL,
+      content TEXT NOT NULL,
+      "createdAt" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )`;
+    await prisma.$executeRaw`CREATE TABLE IF NOT EXISTS "AdminLog" (
+      id TEXT PRIMARY KEY,
+      action TEXT NOT NULL,
+      detail TEXT,
+      "createdAt" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )`;
+
     // 检查是否已有数据
     const postCount = await prisma.post.count();
     const userCount = await prisma.user.count();
