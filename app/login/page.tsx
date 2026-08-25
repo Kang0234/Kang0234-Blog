@@ -1,8 +1,8 @@
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
 
 export const dynamic = 'force-dynamic';
 
-const LoginForm = dynamic(() => import('@/components/LoginForm'), { ssr: false });
+const LoginForm = dynamicImport(() => import('@/components/LoginForm'), { ssr: false });
 
 export default function LoginPage() {
   return (
