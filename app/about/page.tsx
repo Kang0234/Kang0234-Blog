@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <div className="animate-fade-in max-w-2xl mx-auto">
       <div className="text-center mb-8">
-        <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-4 border-sakura-200 bg-white">
+        <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-4 border-gray-300 bg-white">
           <img src={getAvatar('kang0234')} alt="kang0234" className="w-full h-full" />
         </div>
         <h1 className="font-cute text-3xl font-bold">kang0234</h1>
@@ -32,7 +32,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold mb-3 flex items-center gap-2"><span>🌸</span> 兴趣爱好</h2>
+          <h2 className="text-lg font-bold mb-3 flex items-center gap-2"><span>📖</span> 兴趣爱好</h2>
           <ul className="text-gray-600 space-y-1">
             <li>• 追番、二次元文化</li>
             <li>• 折腾博客和各种技术玩意</li>

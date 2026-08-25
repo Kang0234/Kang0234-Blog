@@ -17,7 +17,7 @@ export default async function Home() {
     <div className="animate-fade-in">
       {/* Hero */}
       <section className="text-center py-12 mb-8">
-        <h1 className="font-cute text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-gray-900 via-sakura-500 to-gray-900 bg-clip-text text-transparent">
+        <h1 className="font-cute text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-gray-900 via-gray-500 to-gray-900 bg-clip-text text-transparent">
           kang0234 的博客
         </h1>
         <p className="text-gray-500 text-lg">记录生活 · 分享热爱 · 二次元角落</p>
@@ -25,7 +25,7 @@ export default async function Home() {
           <Link href="/tags" className="px-5 py-2 bg-gray-900 text-white rounded-full text-sm hover:bg-gray-700 transition-colors">
             浏览标签
           </Link>
-          <Link href="/about" className="px-5 py-2 border border-gray-300 text-gray-700 rounded-full text-sm hover:border-sakura-400 hover:text-sakura-500 transition-colors">
+          <Link href="/about" className="px-5 py-2 border border-gray-300 text-gray-700 rounded-full text-sm hover:border-black hover:text-black transition-colors">
             关于我
           </Link>
         </div>
@@ -59,7 +59,7 @@ export default async function Home() {
                 <Link
                   key={tag}
                   href={`/tags/${tag}`}
-                  className="text-xs px-3 py-1 rounded-full bg-sakura-50 text-sakura-600 border border-sakura-200 hover:bg-sakura-100 transition-colors"
+                  className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-200 transition-colors"
                 >
                   #{tag}
                 </Link>
@@ -71,8 +71,8 @@ export default async function Home() {
           <div className="bg-white rounded-xl border border-gray-200 p-5">
             <h3 className="font-bold mb-3 flex items-center gap-2"><span>📊</span> 博客统计</h3>
             <div className="space-y-2 text-sm text-gray-600">
-              <div className="flex justify-between"><span>文章数</span><span className="font-bold text-sakura-500">{posts.length}</span></div>
-              <div className="flex justify-between"><span>标签数</span><span className="font-bold text-sakura-500">{allTags.size}</span></div>
+              <div className="flex justify-between"><span>文章数</span><span className="font-bold text-black">{posts.length}</span></div>
+              <div className="flex justify-between"><span>标签数</span><span className="font-bold text-black">{allTags.size}</span></div>
             </div>
           </div>
         </aside>

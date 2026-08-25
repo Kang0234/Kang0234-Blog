@@ -20,7 +20,7 @@ export default async function TagsPage() {
             <Link
               key={tag}
               href={`/tags/${tag}`}
-              className="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm hover:border-sakura-400 hover:text-sakura-500 hover:bg-sakura-50 transition-all"
+              className="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm hover:border-black hover:text-black hover:bg-gray-100 transition-all"
             >
               <span className="font-medium">#{tag}</span>
               <span className="text-gray-400 ml-1">{count}</span>

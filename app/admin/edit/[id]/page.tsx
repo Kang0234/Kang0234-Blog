@@ -60,7 +60,7 @@ export default function EditPostPage() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           maxLength={255}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sakura-400 focus:ring-2 focus:ring-sakura-100 outline-none text-lg font-bold"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-black focus:ring-2 focus:ring-gray-200 outline-none text-lg font-bold"
           required
         />
         <div className="grid grid-cols-2 gap-4">
@@ -70,7 +70,7 @@ export default function EditPostPage() {
             value={tags}
             onChange={(e) => setTags(e.target.value)}
             maxLength={100}
-            className="px-4 py-2 rounded-lg border border-gray-300 focus:border-sakura-400 focus:ring-2 focus:ring-sakura-100 outline-none text-sm"
+            className="px-4 py-2 rounded-lg border border-gray-300 focus:border-black focus:ring-2 focus:ring-gray-200 outline-none text-sm"
           />
           <input
             type="text"
@@ -78,7 +78,7 @@ export default function EditPostPage() {
             value={summary}
             onChange={(e) => setSummary(e.target.value)}
             maxLength={500}
-            className="px-4 py-2 rounded-lg border border-gray-300 focus:border-sakura-400 focus:ring-2 focus:ring-sakura-100 outline-none text-sm"
+            className="px-4 py-2 rounded-lg border border-gray-300 focus:border-black focus:ring-2 focus:ring-gray-200 outline-none text-sm"
           />
         </div>
         <div className="flex gap-2">
@@ -96,13 +96,13 @@ export default function EditPostPage() {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             rows={16}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-sakura-400 focus:ring-2 focus:ring-sakura-100 outline-none font-mono text-sm resize-y"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-black focus:ring-2 focus:ring-gray-200 outline-none font-mono text-sm resize-y"
             required
           />
         )}
         <div className="flex justify-end gap-3">
           <button type="button" onClick={() => router.back()} className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">取消</button>
-          <button type="submit" disabled={submitting} className="px-6 py-2 bg-sakura-500 text-white rounded-lg hover:bg-sakura-600 disabled:opacity-50">
+          <button type="submit" disabled={submitting} className="px-6 py-2 bg-gray-1000 text-white rounded-lg hover:bg-gray-700 disabled:opacity-50">
             {submitting ? '保存中...' : '保存修改'}
           </button>
         </div>

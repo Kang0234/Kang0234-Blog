@@ -52,7 +52,7 @@ export default function LoginForm() {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-sakura-400 focus:ring-2 focus:ring-sakura-100 outline-none"
+              className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-black focus:ring-2 focus:ring-gray-200 outline-none"
               placeholder="请输入用户名"
               required
             />
@@ -63,7 +63,7 @@ export default function LoginForm() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-sakura-400 focus:ring-2 focus:ring-sakura-100 outline-none"
+              className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-black focus:ring-2 focus:ring-gray-200 outline-none"
               placeholder="请输入密码"
               required
             />
@@ -72,7 +72,7 @@ export default function LoginForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 bg-sakura-500 text-white rounded-lg font-medium hover:bg-sakura-600 disabled:opacity-50 transition-colors"
+            className="w-full py-2.5 bg-gray-1000 text-white rounded-lg font-medium hover:bg-gray-700 disabled:opacity-50 transition-colors"
           >
             {loading ? '登录中...' : '登录'}
           </button>

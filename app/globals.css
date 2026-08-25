@@ -5,11 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=ZCOOL+KuaiLe&display=swap');
 
 :root {
-  --bg: #fafafa;
+  --bg: #ffffff;
   --fg: #111111;
   --muted: #6b7280;
   --border: #e5e7eb;
-  --accent: #f24d94;
+  --accent: #111111;
 }
 
 * { box-sizing: border-box; }
@@ -24,23 +24,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* 樱花飘落装饰 */
-.sakura {
-  position: fixed;
-  top: -10vh;
-  width: 12px;
-  height: 12px;
-  background: radial-gradient(circle at 30% 30%, #ffb7c5, #ff7ab6);
-  border-radius: 50% 0 50% 50%;
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 0;
-  animation: sakuraFall linear infinite;
+/* 漫画风格边框 */
+.manga-border {
+  border: 2px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  transition: all 0.2s ease;
 }
-
-@keyframes sakuraFall {
-  0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.6; }
-  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+.manga-border:hover {
+  box-shadow: 6px 6px 0 #111;
+  transform: translate(-2px, -2px);
 }
 
 /* 文章内容 Markdown 样式 */
@@ -51,7 +43,7 @@ body {
 .prose-blog h1, .prose-blog h2, .prose-blog h3 {
   font-weight: 700;
   margin: 1.5em 0 0.5em;
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid #111;
   padding-left: 12px;
 }
 .prose-blog p { margin: 1em 0; }
@@ -73,19 +65,20 @@ body {
 }
 .prose-blog pre code { background: none; padding: 0; color: inherit; }
 .prose-blog blockquote {
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid #111;
   margin: 1em 0;
   padding: 8px 16px;
   color: var(--muted);
-  background: #fdf2f8;
+  background: #f9fafb;
   border-radius: 0 8px 8px 0;
 }
 .prose-blog img {
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 4px;
   margin: 1em 0;
+  border: 2px solid #111;
 }
-.prose-blog a { color: var(--accent); text-decoration: underline; }
+.prose-blog a { color: #111; text-decoration: underline; text-underline-offset: 2px; }
 
 /* 图片加载骨架 */
 .img-skeleton {
@@ -101,5 +94,14 @@ body {
 /* 滚动条 */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #999; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #111; }
+
+/* 淡入动画 */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

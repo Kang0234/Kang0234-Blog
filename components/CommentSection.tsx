@@ -57,7 +57,7 @@ export default function CommentSection({ postId }: { postId: string }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             maxLength={50}
-            className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:border-sakura-400 focus:ring-2 focus:ring-sakura-100 outline-none text-sm"
+            className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:border-black focus:ring-2 focus:ring-gray-200 outline-none text-sm"
           />
         </div>
         <textarea
@@ -66,14 +66,14 @@ export default function CommentSection({ postId }: { postId: string }) {
           onChange={(e) => setContent(e.target.value)}
           maxLength={2000}
           rows={3}
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-sakura-400 focus:ring-2 focus:ring-sakura-100 outline-none text-sm resize-none"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-black focus:ring-2 focus:ring-gray-200 outline-none text-sm resize-none"
         />
         <div className="flex justify-between items-center mt-3">
           <span className="text-xs text-gray-400">{content.length}/2000</span>
           <button
             type="submit"
             disabled={submitting || !name.trim() || !content.trim()}
-            className="px-5 py-2 bg-sakura-500 text-white rounded-lg text-sm font-medium hover:bg-sakura-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="px-5 py-2 bg-gray-1000 text-white rounded-lg text-sm font-medium hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             {submitting ? '发送中...' : '发表评论'}
           </button>
@@ -89,7 +89,7 @@ export default function CommentSection({ postId }: { postId: string }) {
           {comments.map((c) => (
             <div key={c.id} className="bg-white rounded-lg p-4 border border-gray-200">
               <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 rounded-full bg-sakura-100 flex items-center justify-center text-sm">
+                <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-sm">
                   {c.guestName.charAt(0).toUpperCase()}
                 </div>
                 <span className="text-sm font-medium text-gray-800">{c.guestName}</span>

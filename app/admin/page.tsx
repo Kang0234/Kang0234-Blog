@@ -11,7 +11,7 @@ export default async function AdminPage() {
     <div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-bold">文章列表 ({posts.length})</h2>
-        <Link href="/admin/new" className="px-4 py-2 bg-sakura-500 text-white rounded-lg text-sm hover:bg-sakura-600 transition-colors">
+        <Link href="/admin/new" className="px-4 py-2 bg-gray-1000 text-white rounded-lg text-sm hover:bg-gray-700 transition-colors">
           + 写新文章
         </Link>
       </div>
@@ -30,7 +30,7 @@ export default async function AdminPage() {
             {posts.map((post) => (
               <tr key={post.id} className="border-b border-gray-100 hover:bg-gray-50">
                 <td className="px-4 py-3">
-                  <Link href={`/post/${post.id}`} className="font-medium text-gray-900 hover:text-sakura-500 line-clamp-1">
+                  <Link href={`/post/${post.id}`} className="font-medium text-gray-900 hover:text-black line-clamp-1">
                     {post.title}
                   </Link>
                 </td>
@@ -38,7 +38,7 @@ export default async function AdminPage() {
                 <td className="px-4 py-3 text-gray-500">{new Date(post.createdAt).toLocaleDateString('zh-CN')}</td>
                 <td className="px-4 py-3 text-gray-500">{post.views}</td>
                 <td className="px-4 py-3 text-right">
-                  <Link href={`/admin/edit/${post.id}`} className="text-sakura-500 hover:underline mr-3">编辑</Link>
+                  <Link href={`/admin/edit/${post.id}`} className="text-black hover:underline mr-3">编辑</Link>
                   <DeleteButton postId={post.id} />
                 </td>
               </tr>

@@ -15,9 +15,9 @@ export default async function TagPage({ params }: Props) {
 
   return (
     <div className="animate-fade-in">
-      <Link href="/tags" className="text-sm text-gray-400 hover:text-sakura-500 mb-4 inline-block">← 全部标签</Link>
+      <Link href="/tags" className="text-sm text-gray-400 hover:text-black mb-4 inline-block">← 全部标签</Link>
       <h1 className="text-2xl font-bold mb-6 flex items-center gap-2">
-        <span>🏷️</span> 标签：<span className="text-sakura-500">#{tag}</span>
+        <span>🏷️</span> 标签：<span className="text-black">#{tag}</span>
         <span className="text-sm text-gray-400 font-normal">({posts.length} 篇)</span>
       </h1>
       {posts.length === 0 ? (

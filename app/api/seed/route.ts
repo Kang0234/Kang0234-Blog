@@ -42,10 +42,6 @@ export async function GET() {
     const postCount = await prisma.post.count();
     const userCount = await prisma.user.count();
 
-    if (postCount > 0 && userCount > 0) {
-      return NextResponse.json({ message: '数据已存在，跳过初始化', posts: postCount, users: userCount });
-    }
-
     // 创建管理员
     const hashedPassword = await bcrypt.hash('Kangmou0234@', 10);
     await prisma.user.upsert({
@@ -118,10 +114,14 @@ export async function GET() {
       },
     ];
 
-    for (const post of posts) {
+    for (let i = 0; i < posts.length; i++) {
+      const post = posts[i];
+      const coverImage = `/images/anime_${String(i + 1).padStart(3, '0')}.jpg`;
       const existing = await prisma.post.findFirst({ where: { title: post.title } });
-      if (!existing) {
-        await prisma.post.create({ data: post });
+      if (existing) {
+        await prisma.post.update({ where: { id: existing.id }, data: { coverImage } });
+      } else {
+        await prisma.post.create({ data: { ...post, coverImage } });
       }
     }
 

@@ -16,8 +16,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-2xl">🌸</span>
-          <span className="font-cute text-xl font-bold group-hover:text-sakura-500 transition-colors">
+          <span className="text-2xl">📖</span>
+          <span className="font-cute text-xl font-bold group-hover:text-black transition-colors">
             kang0234 的博客
           </span>
         </Link>
@@ -26,8 +26,8 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-sm font-medium transition-colors hover:text-sakura-500 ${
-                pathname === item.href ? 'text-sakura-500' : 'text-gray-700'
+              className={`text-sm font-medium transition-colors hover:text-black ${
+                pathname === item.href ? 'text-black' : 'text-gray-700'
               }`}
             >
               {item.label}
@@ -35,7 +35,7 @@ export default function Header() {
           ))}
           <Link
             href="/admin"
-            className="text-sm font-medium text-gray-700 hover:text-sakura-500 transition-colors"
+            className="text-sm font-medium text-gray-700 hover:text-black transition-colors"
           >
             后台
           </Link>
@@ -61,12 +61,12 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={() => setMenuOpen(false)}
-              className="block py-2 text-sm font-medium text-gray-700 hover:text-sakura-500"
+              className="block py-2 text-sm font-medium text-gray-700 hover:text-black"
             >
               {item.label}
             </Link>
           ))}
-          <Link href="/admin" onClick={() => setMenuOpen(false)} className="block py-2 text-sm font-medium text-gray-700 hover:text-sakura-500">
+          <Link href="/admin" onClick={() => setMenuOpen(false)} className="block py-2 text-sm font-medium text-gray-700 hover:text-black">
             后台
           </Link>
         </div>
