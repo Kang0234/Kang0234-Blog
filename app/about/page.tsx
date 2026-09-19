@@ -43,7 +43,17 @@ export default function AboutPage() {
 
         <section>
           <h2 className="text-lg font-bold mb-3 flex items-center gap-2"><span>📧</span> 联系方式</h2>
-          <p className="text-gray-600">欢迎在评论区留言交流，或者通过博客后台联系我。</p>
+          <p className="text-gray-600">
+            欢迎在评论区留言交流，或者来我的主站逛逛：
+            <a
+              href="https://kang0234.cn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-500 hover:underline font-medium"
+            >
+              kang0234.cn
+            </a>
+          </p>
         </section>
       </div>
     </div>

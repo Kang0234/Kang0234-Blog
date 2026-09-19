@@ -2,6 +2,8 @@
 
 > 记录生活 · 分享热爱 · 二次元角落
 
+**🔗 在线地址：[kang0234.cn](https://kang0234.cn)**
+
 基于 Next.js 14 + Prisma + Tailwind CSS 构建的全栈博客，黑白极简风 x 二次元元素。
 
 ## 功能特性
@@ -70,7 +72,7 @@ npm run dev
 |------|------|------|
 | `DATABASE_URL` | 数据库连接串（Vercel Postgres 自动配置） | ✅ |
 | `NEXTAUTH_SECRET` | NextAuth 密钥，`openssl rand -base64 32` 生成 | ✅ |
-| `NEXTAUTH_URL` | 你的 Vercel 域名，如 `https://your-blog.vercel.app` | ✅ |
+| `NEXTAUTH_URL` | 你的站点域名，如 `https://kang0234.cn` | ✅ |
 | `GITHUB_ID` | GitHub OAuth Client ID（可选，用于 GitHub 登录） | ❌ |
 | `GITHUB_SECRET` | GitHub OAuth Client Secret（可选） | ❌ |
 
@@ -90,8 +92,8 @@ npm run db:seed
 
 1. 打开 https://github.com/settings/developers
 2. 点击 "New OAuth App"
-3. Homepage URL: `https://your-blog.vercel.app`
-4. Authorization callback URL: `https://your-blog.vercel.app/api/auth/callback/github`
+3. Homepage URL: `https://kang0234.cn`
+4. Authorization callback URL: `https://kang0234.cn/api/auth/callback/github`
 5. 创建后获取 Client ID 和 Client Secret，填入环境变量
 
 ## 项目结构
